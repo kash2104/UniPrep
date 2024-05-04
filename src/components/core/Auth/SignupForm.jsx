@@ -27,7 +27,7 @@ const SignupForm = () => {
       toast.error("Passwords do not match");
       return;
     }
-
+    console.log("signupData: ", data);
     try {
       dispatch(setSignupData(data));
       dispatch(sendotp(data.email, navigate));
