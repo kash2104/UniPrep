@@ -82,7 +82,7 @@ const LoginForm = () => {
               <AiOutlineEye fontSize={24} />
             )}
           </span>
-          <Link to="/forgot-password">
+          <Link to="/changePassword">
             <p className="mt-1 ml-auto max-w-max text-xs text-blue-100">
               Forgot Password
             </p>
@@ -101,6 +101,12 @@ const LoginForm = () => {
       >
         Login
       </button>
+
+      <Link to="/signup">
+        <p className="mt-1 ml-auto max-w-max text-xs text-blue-100">
+          Don't have an account? Sign Up
+        </p>
+      </Link>
     </form>
   );
 };

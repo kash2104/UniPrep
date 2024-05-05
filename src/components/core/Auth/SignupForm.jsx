@@ -6,6 +6,7 @@ import { setSignupData } from "../../../slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { sendotp } from "../../../services/operations/authAPI";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -191,6 +192,12 @@ const SignupForm = () => {
       >
         Sign Up
       </button>
+
+      <Link to="/login">
+        <p className="mt-1 ml-auto max-w-max text-xs text-blue-100">
+          Already have an account? Login
+        </p>
+      </Link>
     </form>
   );
 };
