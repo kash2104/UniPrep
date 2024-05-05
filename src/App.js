@@ -4,6 +4,9 @@ import Signup from "./pages/Signup";
 import VerifyEmail from "./pages/VerifyEmail";
 import Login from "./pages/Login";
 import ChangePassword from "./pages/ChangePassword";
+import Dashboard from "./pages/Dashboard";
+import PrivateRoute from "./components/core/Auth/PrivateRoute";
+import AddCourse from "./components/core/Dashboard/AddCourse/AddCourse";
 
 function App() {
   return (
@@ -18,6 +21,16 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/changePassword" element={<ChangePassword />} />
+
+        <Route
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        >
+          <Route path="/addCourse" element={<AddCourse />} />
+        </Route>
       </Routes>
     </div>
   );

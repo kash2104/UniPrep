@@ -96,11 +96,12 @@ export function login(email, password, navigate) {
       }
 
       toast.success("Login Successfull");
+
       dispatch(setToken(response.data.token));
 
       localStorage.setItem("token", JSON.stringify(response.data.token));
 
-      localStorage.setItem("user", JSON.stringify(response.data.user));
+      //   localStorage.setItem("user", JSON.stringify(response.data.user));
 
       navigate("/getAllPapers");
     } catch (error) {
@@ -143,5 +144,15 @@ export function changePassword(
 
     dispatch(setLoading(false));
     toast.dismiss(toastId);
+  };
+}
+
+export function logout(navigate) {
+  return (dispatch) => {
+    dispatch(setToken(null));
+    localStorage.removeItem("token");
+    // localStorage.removeItem("user");
+    toast.success("Logged Out");
+    navigate("/");
   };
 }

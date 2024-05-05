@@ -19,7 +19,7 @@ const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const submitLoginForm = async (data) => {
-    console.log("Login Data: ", data);
+    // console.log("Login Data: ", data);
     try {
       dispatch(login(data.email, data.password, navigate));
     } catch (error) {
