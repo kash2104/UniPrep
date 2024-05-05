@@ -202,7 +202,15 @@ exports.login = async (req, res) => {
 //change password
 exports.changePassword = async (req, res) => {
   try {
-    const { newPassword, confirmNewPassword } = req.body;
+    const { email, newPassword, confirmNewPassword } = req.body;
+
+    const registeredUser = await User.findOne({ email: email });
+    if (!registeredUser) {
+      return res.status(400).json({
+        success: false,
+        message: "You are not a registered user. Please sign up first!",
+      });
+    }
 
     if (newPassword !== confirmNewPassword) {
       return res.status(400).json({
@@ -216,7 +224,7 @@ exports.changePassword = async (req, res) => {
 
     //update the password of the existing the user
     const updatedUserDetails = await User.findByIdAndUpdate(
-      req.user.id,
+      registeredUser._id,
       {
         password: hashedNewPassword,
       },
