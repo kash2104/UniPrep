@@ -19,6 +19,7 @@ export const addCourse = async (data, token) => {
       //   throw new Error("Could not add course");
     }
 
+    toast.success("Course added successfully");
     result = response?.data?.data;
 
     return result;

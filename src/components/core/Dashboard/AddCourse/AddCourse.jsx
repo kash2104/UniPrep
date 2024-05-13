@@ -30,9 +30,7 @@ const AddCourse = () => {
       { courseName: data.courseName, courseCode: data.courseCode },
       token
     );
-    if (result) {
-      toast.success("Course Added Successfully");
-    }
+
     setLoading(false);
     toast.dismiss(toastId);
     console.log("Printing RESULT while adding course", result);
