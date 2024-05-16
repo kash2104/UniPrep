@@ -7,6 +7,7 @@ import ChangePassword from "./pages/ChangePassword";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import AddCourse from "./components/core/Dashboard/AddCourse/AddCourse";
+import UploadPaper from "./components/core/Dashboard/UploadPaper/UploadPaper";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
           }
         >
           <Route path="/addCourse" element={<AddCourse />} />
+
+          <Route path="/uploadPaper" element={<UploadPaper />} />
         </Route>
       </Routes>
     </div>
