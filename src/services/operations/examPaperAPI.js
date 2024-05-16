@@ -26,7 +26,7 @@ export const uploadPaper = async (data, token) => {
   } catch (error) {
     console.log("Upload Paper API data: ", data);
     console.log("UPLOAD_PAPER_API ERROR...", error);
-    toast.error(`Paper is already uploaded or ${error.message}`);
+    toast.error(`${error.response.data.message}`);
   }
 
   toast.dismiss(toastId);
