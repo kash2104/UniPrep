@@ -9,6 +9,7 @@ import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import AddCourse from "./components/core/Dashboard/AddCourse/AddCourse";
 import UploadPaper from "./components/core/Dashboard/UploadPaper/UploadPaper";
 import GetAllPaper from "./components/core/Dashboard/GetPaper/GetAllPaper";
+import SearchPaper from "./components/core/Dashboard/SearchPaper/SearchPaper";
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
           <Route path="/uploadPaper" element={<UploadPaper />} />
 
           <Route path="/getAllPapers" element={<GetAllPaper />} />
+
+          <Route path="/getCoursePaper" element={<SearchPaper />} />
         </Route>
       </Routes>
     </div>
