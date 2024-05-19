@@ -28,6 +28,8 @@ const GetAllPaper = () => {
       } catch (error) {
         console.log("Error while fetching all the papers", error);
       }
+
+      setLoading(false);
     };
 
     fetchAllPaper();
@@ -35,22 +37,22 @@ const GetAllPaper = () => {
 
   return (
     <div>
-      <Table className="rounded-xl border border-richblack-800">
+      <Table className="rounded-xl ">
         <Thead>
-          <Tr className="flex gap-x-40 rounded-t-md border-b border-b-richblack-800 px-6 py-2 justify-evenly">
+          <Tr className="flex gap-x-40 rounded-t-md border-b border-b-yellow-50 px-6 py-2 justify-evenly">
             <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
               Course
             </Th>
-            <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
+            <Th className="flex-1 text-center text-sm font-medium uppercase text-richblack-100">
               Code
             </Th>
-            <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
+            <Th className="flex-1 text-right text-sm font-medium uppercase text-richblack-100">
               Exam
             </Th>
-            <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
+            <Th className="flex-1 text-right text-sm font-medium uppercase text-richblack-100">
               Year
             </Th>
-            <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
+            <Th className="flex-1 text-right text-sm font-medium uppercase text-richblack-100">
               Action
             </Th>
           </Tr>
@@ -73,7 +75,7 @@ const GetAllPaper = () => {
                   >
                     <Td className="text-sm font-medium text-richblack-100">
                       <div className="flex flex-col justify-between">
-                        <p className="text-medium font-semibold text-richblack-5">
+                        <p className="text-medium font-semibold text-richblack-5 w-4 flex flex-wrap">
                           {paper.course.courseName.toUpperCase()}
                         </p>
                       </div>
@@ -103,7 +105,7 @@ const GetAllPaper = () => {
                       </div>
                     </Td>
 
-                    <Td className="text-sm font-medium text-yellow-50">
+                    <Td className="text-sm font-medium text-[#0079ff]">
                       <div className="flex flex-col justify-between">
                         <Link
                           className="text-medium font-semibold"
