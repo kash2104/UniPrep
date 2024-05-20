@@ -158,6 +158,32 @@ exports.getAllPapers = async (req, res) => {
   }
 };
 
+//getting the paper of a particular user
+exports.getUserPaper = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    const userPaper = await ExamPaper.find({
+      uploadedBy: userId,
+    })
+      .sort({ createdAt: -1 })
+      .populate("course");
+
+    res.status(200).json({
+      success: true,
+      data: userPaper,
+    });
+  } catch (error) {
+    console.log("Error while getting papers of a particular user", error);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to retrieve papers of a particular user",
+      error: error.message,
+    });
+  }
+};
+
 //delete a paper
 exports.deletePaper = async (req, res) => {
   try {

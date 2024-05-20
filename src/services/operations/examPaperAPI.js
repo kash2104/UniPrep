@@ -2,8 +2,12 @@ import toast from "react-hot-toast";
 import { examPaperEndpoints } from "../apis";
 import { apiConnector } from "../apiconnector";
 
-const { UPLOAD_PAPER_API, ALL_PAPER_API, COURSE_PAPER_API } =
-  examPaperEndpoints;
+const {
+  UPLOAD_PAPER_API,
+  ALL_PAPER_API,
+  COURSE_PAPER_API,
+  GET_USER_PAPER_API,
+} = examPaperEndpoints;
 
 export const uploadPaper = async (data, token) => {
   let result = null;
@@ -83,6 +87,32 @@ export const coursePaper = async (data, token) => {
     // console.log("Upload Paper API data: ", data);
     console.log("COURSE_PAPER_API ERROR...", error);
     toast.error(`${error.response.data.message}`);
+  }
+
+  toast.dismiss(toastId);
+
+  return result;
+};
+
+export const fetchUserPaper = async (token) => {
+  let result = [];
+  const toastId = toast.loading("Loading...");
+
+  try {
+    const response = await apiConnector("GET", GET_USER_PAPER_API, null, {
+      Authorization: `Bearer ${token}`,
+    });
+
+    console.log("GET USER PAPER API RESPONSE...", response);
+
+    if (!response?.data?.success) {
+      throw new Error("Could not fetch user papers");
+    }
+
+    result = response?.data?.data;
+  } catch (error) {
+    console.log("GET USER PAPERS API ERROR....", error);
+    toast.error(error.message);
   }
 
   toast.dismiss(toastId);

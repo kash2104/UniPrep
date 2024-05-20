@@ -18,5 +18,6 @@ export const examPaperEndpoints = {
   UPLOAD_PAPER_API: BASE_URL + "/examPaper/uploadPaper",
   COURSE_PAPER_API: BASE_URL + "/examPaper/getCoursePaper",
   ALL_PAPER_API: BASE_URL + "/examPaper/getAllPapers",
+  GET_USER_PAPER_API: BASE_URL + "/examPaper/getUserPaper",
   DELETE_PAPER_API: BASE_URL + "/examPaper/deletePaper",
 };
