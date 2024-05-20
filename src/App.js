@@ -10,6 +10,7 @@ import AddCourse from "./components/core/Dashboard/AddCourse/AddCourse";
 import UploadPaper from "./components/core/Dashboard/UploadPaper/UploadPaper";
 import GetAllPaper from "./components/core/Dashboard/GetPaper/GetAllPaper";
 import SearchPaper from "./components/core/Dashboard/SearchPaper/SearchPaper";
+import MyPapers from "./components/core/Dashboard/MyPapers";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
           <Route path="/getAllPapers" element={<GetAllPaper />} />
 
           <Route path="/getCoursePaper" element={<SearchPaper />} />
+
+          <Route path="/dashboard" element={<MyPapers />} />
         </Route>
       </Routes>
     </div>
