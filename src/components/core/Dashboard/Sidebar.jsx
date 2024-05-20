@@ -30,6 +30,12 @@ const sidebarLinks = [
     path: "/addCourse",
     icon: "MdAddCircle",
   },
+  {
+    id: 5,
+    name: "My Dashboard",
+    path: "/dashboard",
+    icon: "MdDashboardCustomize",
+  },
 ];
 const Sidebar = () => {
   const dispatch = useDispatch();
