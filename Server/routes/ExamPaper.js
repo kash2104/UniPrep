@@ -14,6 +14,6 @@ router.post("/uploadPaper", auth, uploadPaper);
 router.post("/getCoursePaper", auth, getCoursePaper);
 router.get("/getAllPapers", auth, getAllPapers);
 router.get("/getUserPaper", auth, getUserPaper);
-router.post("/deletePaper", auth, deletePaper);
+router.delete("/deletePaper", auth, deletePaper);
 
 module.exports = router;
