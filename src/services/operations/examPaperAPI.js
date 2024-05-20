@@ -7,6 +7,7 @@ const {
   ALL_PAPER_API,
   COURSE_PAPER_API,
   GET_USER_PAPER_API,
+  DELETE_PAPER_API,
 } = examPaperEndpoints;
 
 export const uploadPaper = async (data, token) => {
@@ -118,4 +119,28 @@ export const fetchUserPaper = async (token) => {
   toast.dismiss(toastId);
 
   return result;
+};
+
+export const deletePaper = async (data, token) => {
+  const toastId = toast.loading("Loading...");
+
+  try {
+    const response = await apiConnector("DELETE", DELETE_PAPER_API, data, {
+      Authorization: `Bearer ${token}`,
+    });
+
+    console.log("DELETE PAPER API RESPONSE....", response);
+
+    if (!response?.data?.success) {
+      throw new Error("Could not delete the paper");
+    }
+
+    toast.success("Paper deleted");
+  } catch (error) {
+    console.log("DELETE PAPER API ERROR....", error);
+
+    toast.error(error.message);
+  }
+
+  toast.dismiss(toastId);
 };
