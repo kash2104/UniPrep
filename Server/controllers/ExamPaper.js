@@ -114,7 +114,7 @@ exports.getCoursePaper = async (req, res) => {
     if (!courseDetails) {
       return res.status(400).json({
         success: false,
-        message: `No papers found for ${courseCode.toUpperCase()}.`,
+        message: `No papers for course code ${courseCode.toUpperCase()}`,
       });
     }
 
