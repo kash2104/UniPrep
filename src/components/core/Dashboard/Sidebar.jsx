@@ -56,7 +56,7 @@ const Sidebar = () => {
   };
   return (
     <div>
-      <div className="flex h-[100vh] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10">
+      <div className="flex h-[100vh] md:min-w-[220px] min-w-[120px]  flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10">
         <div className="flex flex-col">
           {sidebarLinks.map((link, index) => {
             return (

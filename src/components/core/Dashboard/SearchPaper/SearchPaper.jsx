@@ -45,7 +45,7 @@ const SearchPaper = () => {
         <div className=" bg-[#1E2A47]  border-x-lmshadow flex h-[100%] p-[6px] justify-between items-center searchbar-container rounded-[15px]">
           <img
             src={searchIcon}
-            className=" pr-[16px] pl-[16px] text-white"
+            className="hidden md:block pr-[16px] pl-[16px] text-white"
             alt="search-icon"
           />
 
@@ -58,17 +58,24 @@ const SearchPaper = () => {
           />
 
           <button
-            className=" min-w-[84px] p-[12px] bg-btn border-none rounded-[10px] text-white text-[16px] font-bold cursor-pointer hover:scale-90 transition-all duration-200"
+            className=" md:block min-w-[84px] p-[12px] bg-btn border-none rounded-[10px] text-white text-[16px] font-bold cursor-pointer hover:scale-90 transition-all duration-200 hidden"
             type="submit"
           >
             Search
+          </button>
+          <button type="submit">
+            <img
+              src={searchIcon}
+              className="md:hidden sm:block pr-[16px] pl-[16px] text-white"
+              alt="search-icon"
+            />
           </button>
         </div>
       </form>
 
       {subjectPapers.length > 0 && (
         <div>
-          <Table className="rounded-xl">
+          <Table className="rounded-xl mt-10">
             <Thead>
               <Tr className="flex gap-x-40 rounded-t-md border-b border-[#0079ff] px-6 py-2 justify-evenly">
                 <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
