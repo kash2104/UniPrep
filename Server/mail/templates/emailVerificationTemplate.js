@@ -1,5 +1,5 @@
 const otpTemplate = (otp) => {
-	return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 	<html>
 	
 	<head>
@@ -69,7 +69,7 @@ const otpTemplate = (otp) => {
 			<div class="message">OTP Verification Email</div>
 			<div class="body">
 				<p>Dear User,</p>
-				<p>Thank you for registering with UniShare. To complete your registration, please use the following OTP
+				<p>Thank you for registering with UniPrep. To complete your registration, please use the following OTP
 					(One-Time Password) to verify your account:</p>
 				<h2 class="highlight">${otp}</h2>
 				<p>This OTP is valid for 5 minutes. If you did not request this verification, please disregard this email.
