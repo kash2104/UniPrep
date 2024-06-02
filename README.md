@@ -1,31 +1,30 @@
-# React & Tailwind CSS Starter Pack
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+# What is UniPrep ?
 
-## Usage
+UniPrep is a web application designed to help university students prepare for their exams by providing access to previous years' exam papers. This platform allows students to upload past exam papers, making them available to everyone. By using UniPrep, students can gain valuable insights into the types of questions that have been asked in the past, giving them an edge in their exam preparation.
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
-    ```
+## Features
 
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
-    npm install
-    ```
+- **Upload Exam Papers** - Students can easily upload past exam papers to the platform.
+- **Access Previous Papers** - Students can browse exam papers from previous years.
+- **Search Functionality** - Quickly find relevant exam papers using the search feature.
+- **OTP Verification** - Secure signup with OTP verification.
 
-1. Start the development server.
-    ```sh
-    npm start
-    ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
 
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
 
-## Contributing
 
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+## Tech Stack
+
+
+[MongoDB](https://www.mongodb.com/) - A NoSQL database used for storing exam papers and user data.
+
+[Express.js](https://expressjs.com/) - A web application framework for Node.js, used for building the backend API.
+
+[React](https://react.dev/learn) -  A JavaScript library for building user interfaces, used for developing the frontend.
+
+[Node.js](https://nodejs.org/en) - A JavaScript runtime used for building the backend server.
+
+[Cloudinary](https://cloudinary.com/) - A cloud-based image and file management service, used for storing and serving uploaded exam papers.
+
+## Demo
