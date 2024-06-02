@@ -14,16 +14,22 @@ const Upload = ({
 
   const [selectedFile, setSelectedFile] = useState(null);
 
+  const [fileType, setFileType] = useState("");
+
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
       previewFile(file);
       setSelectedFile(file);
+      setFileType(file.type);
     }
   };
   //creating the drap n drop zone
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    accept: { "image/*": [".pdf", ".jpg", ".jpeg", ".png"] },
+    accept: {
+      "application/pdf": [".pdf"],
+      "image/*": [".jpg", ".jpeg", ".png"],
+    },
     onDrop,
   });
 
@@ -65,11 +71,20 @@ const Upload = ({
       >
         {previewSource ? (
           <div className="flex w-full flex-col p-6">
-            <img
-              src={previewSource}
-              alt="Preview"
-              className="h-full w-full rounded-md object-cover"
-            />
+            {fileType === "application/pdf" ? (
+              <iframe
+                src={previewSource}
+                title="PDF Preview"
+                alt="No Preview Available"
+                className="h-full w-full rounded-md object-cover text-white"
+              />
+            ) : (
+              <img
+                src={previewSource}
+                alt="No Preview Available"
+                className="h-full w-full rounded-md object-cover text-white"
+              />
+            )}
 
             {!viewData && (
               <button
