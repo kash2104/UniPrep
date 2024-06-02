@@ -31,7 +31,7 @@ app.use(
 app.use(
   cors({
     //frontend request will come from port 3000
-    origin: "http://localhost:3000",
+    origin: "*",
     credentials: true,
   })
 );
