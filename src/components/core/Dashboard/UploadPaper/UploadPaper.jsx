@@ -17,6 +17,21 @@ const examTypeArray = [
   },
 ];
 
+const semesterArray = [
+  {
+    id: "monsoon",
+    name: "Monsoon Sem",
+  },
+  {
+    id: "winter",
+    name: "Winter Sem",
+  },
+  {
+    id: "bisem",
+    name: "Bi-Sem",
+  },
+];
+
 const UploadPaper = () => {
   const {
     register,
@@ -38,6 +53,7 @@ const UploadPaper = () => {
       {
         courseName: data.courseName,
         courseCode: data.courseCode,
+        semester: data.semester,
         examType: data.examType,
         year: data.examYear,
         paper: data.examPaper,
@@ -97,6 +113,43 @@ const UploadPaper = () => {
         {errors.courseCode && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
             Course Code is required
+          </span>
+        )}
+      </div>
+
+      {/* semester */}
+      <div className="flex flex-col space-y-2">
+        <label htmlFor="semester" className="text-sm text-richblack-5">
+          Semester
+          <sup className="text-pink-200">*</sup>
+        </label>
+
+        <select
+          id="semester"
+          defaultValue=""
+          {...register("semester", { required: true })}
+          style={{
+            boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
+          }}
+          className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+        >
+          <option value="" disabled>
+            Choose Semester
+          </option>
+
+          {!loading &&
+            semesterArray?.map((type, index) => {
+              return (
+                <option key={index} value={type?.id}>
+                  {type.name}
+                </option>
+              );
+            })}
+        </select>
+
+        {errors.semester && (
+          <span className="ml-2 text-xs tracking-wide text-pink-200">
+            Semester is required
           </span>
         )}
       </div>

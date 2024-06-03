@@ -8,14 +8,21 @@ require("dotenv").config();
 
 exports.uploadPaper = async (req, res) => {
   try {
-    const { courseName, courseCode, examType, year } = req.body;
+    const { courseName, courseCode, semester, examType, year } = req.body;
     // console.log(req.body);
     // console.log(course, examType, year);
 
     const paper = req.files.paper;
     // console.log(paper);
 
-    if (!courseName || !courseCode || !examType || !year || !paper) {
+    if (
+      !courseName ||
+      !courseCode ||
+      !semester ||
+      !examType ||
+      !year ||
+      !paper
+    ) {
       return res.status(404).json({
         success: false,
         message: "All fields are required to upload the paper",
@@ -26,6 +33,7 @@ exports.uploadPaper = async (req, res) => {
     const lowerCaseCourseCode = courseCode.trim().toLowerCase();
     const lowerCaseCourseName = courseName.trim().toLowerCase();
     const lowerCaseExamType = examType.trim().toLowerCase();
+    const lowerCaseSemester = semester.trim().toLowerCase();
 
     const courseDetails = await Course.findOne({
       courseCode: lowerCaseCourseCode,
@@ -42,6 +50,7 @@ exports.uploadPaper = async (req, res) => {
     const existingPaper = await ExamPaper.findOne({
       course: courseDetails._id,
       examType: lowerCaseExamType,
+      semester: lowerCaseSemester,
       year: year,
     });
 
@@ -63,6 +72,7 @@ exports.uploadPaper = async (req, res) => {
     const examPaperDetails = await ExamPaper.create({
       course: courseDetails._id,
       examType: lowerCaseExamType,
+      semester: lowerCaseSemester,
       year: year,
       paperImage: uploadDetails.secure_url,
       uploadedBy: req.user.id,
@@ -139,7 +149,7 @@ exports.getAllPapers = async (req, res) => {
     const allPapers = await ExamPaper.find({})
       .populate({
         path: "course",
-        select: "courseName courseCode paperImage",
+        // select: "courseName courseCode paperImage",
       })
       .exec();
 
