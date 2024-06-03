@@ -39,7 +39,7 @@ const GetAllPaper = () => {
     <div>
       <Table className="rounded-xl ">
         <Thead>
-          <Tr className="flex gap-x-40 rounded-t-md border-b border-b-yellow-50 px-6 py-2 justify-evenly">
+          <Tr className="flex gap-x-24 rounded-t-md border-b border-b-yellow-50 px-6 py-2 justify-evenly">
             <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
               Course
             </Th>
