@@ -50,11 +50,11 @@ const PapersTable = ({ papers, setPapers }) => {
             <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
               Course
             </Th>
-            <Th className="flex-1 text-center text-sm font-medium uppercase text-richblack-100">
+            <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
               Code
             </Th>
 
-            <Th className="flex-1 text-center text-sm font-medium uppercase text-richblack-100">
+            <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
               Sem
             </Th>
 

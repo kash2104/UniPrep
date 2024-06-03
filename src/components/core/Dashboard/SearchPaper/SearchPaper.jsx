@@ -81,10 +81,10 @@ const SearchPaper = () => {
                 <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
                   Sem
                 </Th>
-                <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
+                <Th className="flex-1 text-right text-sm font-medium uppercase text-richblack-100">
                   Exam
                 </Th>
-                <Th className="flex-1 text-center text-sm font-medium uppercase text-richblack-100">
+                <Th className="flex-1 text-right text-sm font-medium uppercase text-richblack-100">
                   Year
                 </Th>
                 <Th className="flex-1 text-right text-sm font-medium uppercase text-richblack-100">
