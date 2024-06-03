@@ -53,6 +53,11 @@ const PapersTable = ({ papers, setPapers }) => {
             <Th className="flex-1 text-center text-sm font-medium uppercase text-richblack-100">
               Code
             </Th>
+
+            <Th className="flex-1 text-center text-sm font-medium uppercase text-richblack-100">
+              Sem
+            </Th>
+
             <Th className="flex-1 text-right text-sm font-medium uppercase text-richblack-100">
               Exam
             </Th>
@@ -92,6 +97,14 @@ const PapersTable = ({ papers, setPapers }) => {
                       <div className="flex flex-col justify-between">
                         <p className="text-medium font-semibold text-richblack-5">
                           {paper?.course?.courseCode.toUpperCase()}
+                        </p>
+                      </div>
+                    </Td>
+
+                    <Td className="text-sm font-medium text-richblack-100">
+                      <div className="flex flex-col justify-between">
+                        <p className="text-medium font-semibold text-richblack-5">
+                          {paper?.semester.toUpperCase()}
                         </p>
                       </div>
                     </Td>

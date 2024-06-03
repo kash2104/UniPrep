@@ -79,6 +79,9 @@ const SearchPaper = () => {
             <Thead>
               <Tr className="flex gap-x-40 rounded-t-md border-b border-[#0079ff] px-6 py-2 justify-evenly">
                 <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
+                  Sem
+                </Th>
+                <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
                   Exam
                 </Th>
                 <Th className="flex-1 text-center text-sm font-medium uppercase text-richblack-100">
@@ -105,6 +108,13 @@ const SearchPaper = () => {
                         key={paper._id}
                         className="flex justify-between border-b border-richblack-800 px-6 py-8"
                       >
+                        <Td className="text-sm font-medium text-richblack-100">
+                          <div className="flex flex-col justify-between">
+                            <p className="text-medium font-semibold text-richblack-5">
+                              {paper?.semester.toUpperCase()}
+                            </p>
+                          </div>
+                        </Td>
                         <Td className="text-sm font-medium text-richblack-100">
                           <div className="flex flex-col justify-between">
                             <p className="text-medium font-semibold text-richblack-5">
