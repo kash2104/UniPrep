@@ -23,4 +23,4 @@ UniPrep is a web application designed to help university students prepare for th
 
 ## Demo
 
-https://github.com/kash2104/UniPrep/assets/141061817/3aa3d4bb-679a-4f78-9c71-f6e95343c370
+https://github.com/kash2104/UniPrep/assets/141061817/35a9d830-3e6d-4a8d-924a-93b68a157fcf
