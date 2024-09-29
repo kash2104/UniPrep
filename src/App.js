@@ -33,15 +33,50 @@ function App() {
             </PrivateRoute>
           }
         >
-          <Route path="/addCourse" element={<AddCourse />} />
+          <Route
+            path="/addCourse"
+            element={
+              <PrivateRoute>
+                <AddCourse />
+              </PrivateRoute>
+            }
+          />
 
-          <Route path="/uploadPaper" element={<UploadPaper />} />
+          <Route
+            path="/uploadPaper"
+            element={
+              <PrivateRoute>
+                <UploadPaper />
+              </PrivateRoute>
+            }
+          />
 
-          <Route path="/getAllPapers" element={<GetAllPaper />} />
+          <Route
+            path="/getAllPapers"
+            element={
+              <PrivateRoute>
+                <GetAllPaper />
+              </PrivateRoute>
+            }
+          />
 
-          <Route path="/getCoursePaper" element={<SearchPaper />} />
+          <Route
+            path="/getCoursePaper"
+            element={
+              <PrivateRoute>
+                <SearchPaper />
+              </PrivateRoute>
+            }
+          />
 
-          <Route path="/dashboard" element={<MyPapers />} />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <MyPapers />
+              </PrivateRoute>
+            }
+          />
         </Route>
       </Routes>
     </div>
