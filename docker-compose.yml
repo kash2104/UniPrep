@@ -1,0 +1,18 @@
+services:
+  backend:
+    image: kavish004/uniprep-backend
+    container_name: backend
+    ports:
+      - "4000:4000"
+    env_file:
+      - Server/.env
+
+  frontend:
+    image: kavish004/uniprep-frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_BASE_URL=http://localhost:4000/api/v1
+    depends_on:
+      - backend
