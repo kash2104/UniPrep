@@ -5,6 +5,7 @@ on:
     paths-ignore:
       - "Server/**"
       - "README.md"
+      - ".github/workflows/**"
 
 jobs:
   build-image:
